@@ -105,7 +105,11 @@ database.default.port = 3306
 ### Encryption Key
 
 ```
-encryption.key = base64:f8hjK8JYt1h0kP9u7Q1zN3yS8Bt1v4c2n0Q5zA2s4Wk=
+Setelah membuat file .env, jalankan perintah berikut untuk menghasilkan encryption key:
+
+php spark key:generate
+
+encryption.key = (isi setelah generate)
 ```
 
 ---

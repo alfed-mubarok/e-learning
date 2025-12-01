@@ -1,68 +1,160 @@
-# CodeIgniter 4 Application Starter
+📘 E-LEARNING SMK NEGERI 1 KAMAL — CodeIgniter 4
 
-## What is CodeIgniter?
+Sistem e-learning berbasis website untuk mendukung pembelajaran DKV di SMK Negeri 1 Kamal.
+Dibangun menggunakan CodeIgniter 4, dengan fitur lengkap:
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+Manajemen materi
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+Tugas & pengumpulan
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+Referensi
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+Proyek siswa
 
-## Installation & updates
+Diskusi & notifikasi
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+Absensi
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+Sistem kelas & semester
 
-## Setup
+Dashboard guru dan siswa
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+📦 Fitur Utama
 
-## Important Change with index.php
+CRUD Materi (video, gambar, file, ringkasan)
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+CRUD Tugas (deadlines, upload file, nilai)
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+Diskusi per-materi
 
-**Please** read the user guide for a better explanation of how CI4 works!
+Notifikasi real-time sederhana
 
-## Repository Management
+Proyek siswa (gambar + link)
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+Rekap absensi
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+Sistem kenaikan kelas
 
-## Server Requirements
+Sidebar dinamis berdasarkan guru–kelas–semester
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+🚀 Cara Install di Lokal
+1️⃣ Clone Repository
+git clone https://github.com/alfed-mubarok/e-learning.git
+cd e-learning
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+2️⃣ Install Dependencies
+composer install
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+3️⃣ Buat File .env dari Template
+cp env.example .env
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+4️⃣ Konfigurasi .env
+Base URL Lokal:
+app.baseURL = 'http://localhost:8080'
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+Database Lokal:
+database.default.hostname = localhost
+database.default.database = e-learning
+database.default.username = root
+database.default.password =
+database.default.DBDriver = MySQLi
+database.default.port = 3306
+
+Encryption Key:
+encryption.key = base64:f8hjK8JYt1h0kP9u7Q1zN3yS8Bt1v4c2n0Q5zA2s4Wk=
+
+5️⃣ Import Database
+
+Buka phpMyAdmin
+
+Buat database dengan nama: e-learning
+
+Import file SQL schema
+
+6️⃣ Jalankan Server
+php spark serve
+
+
+Akses:
+
+http://localhost:8080
+
+🔑 Akun Login Default
+Guru
+ID User  : G002
+Password : admin
+
+
+Guru dapat:
+
+Tambah siswa
+
+Tambah materi
+
+Tambah tugas
+
+Lihat rekap tugas
+
+Tambah referensi
+
+Kelola proyek siswa
+
+🌐 Panduan Hosting (Untuk Server / Kakak Tingkat)
+
+Clone repo ke server:
+
+git clone https://github.com/alfed-mubarok/e-learning.git
+
+
+Jalankan:
+
+composer install
+
+
+Copy env.example menjadi .env
+
+Isi database hosting:
+
+database.default.hostname = SQL_HOST
+database.default.database = NAMA_DATABASE
+database.default.username = USER_DB
+database.default.password = PASSWORD_DB
+
+
+Generate encryption key jika perlu:
+
+php spark key:generate
+
+
+Pastikan folder public/ dijadikan webroot (public_html)
+
+Set permission folder writable:
+
+chmod -R 775 writable/
+
+
+Import database SQL
+
+Jalankan website
+
+Selesai 🎉
+
+📚 Teknologi
+
+CodeIgniter 4
+
+PHP 8+
+
+MySQL
+
+Bootstrap 5
+
+jQuery
+
+📄 Lisensi
+
+Project ini digunakan untuk keperluan akademik SMK Negeri 1 Kamal.
+
+🧑‍💻 Pengembang
+
+Alfed Mubarok

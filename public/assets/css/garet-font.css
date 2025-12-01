@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Garet';
+    src: url('../fonts/Garet-Book.woff2') format('woff2'),
+         url('../fonts/Garet-Book.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+/* Gunakan font Garet di semua elemen utama */
+body, h1, h2, h3, h4, h5, h6, p, span, a, input, button, label {
+    font-family: 'Garet', sans-serif !important;
+}

@@ -1,160 +1,194 @@
-📘 E-LEARNING SMK NEGERI 1 KAMAL — CodeIgniter 4
+# 📘 E-LEARNING SMK NEGERI 1 KAMAL
 
-Sistem e-learning berbasis website untuk mendukung pembelajaran DKV di SMK Negeri 1 Kamal.
-Dibangun menggunakan CodeIgniter 4, dengan fitur lengkap:
+Sistem e-learning berbasis website untuk mendukung pembelajaran DKV di SMK Negeri 1 Kamal. Dibangun menggunakan **CodeIgniter 4**.
 
-Manajemen materi
+---
 
-Tugas & pengumpulan
+<p align="center">
+  <img src="https://img.shields.io/badge/CodeIgniter-4.x-orange?logo=codeigniter&logoColor=white" />
+  <img src="https://img.shields.io/badge/PHP-8+-777BB4?logo=php&logoColor=white" />
+  <img src="https://img.shields.io/badge/MySQL-8.0-4479A1?logo=mysql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Status-Active-success" />
+</p>
 
-Referensi
+---
 
-Proyek siswa
+## 📑 Tabel Konten
 
-Diskusi & notifikasi
+* [✨ Overview](#-overview)
+* [🚀 Fitur Utama](#-fitur-utama)
+* [🛠️ Instalasi di Lokal](#️-instalasi-di-lokal)
+* [🔧 Konfigurasi File ENV](#-konfigurasi-file-env)
+* [🗄️ Import Database](#️-import-database)
+* [▶️ Menjalankan Server Lokal](#️-menjalankan-server-lokal)
+* [🔑 Akun Login Default](#-akun-login-default)
+* [🌐 Panduan Hosting](#-panduan-hosting)
+* [🧩 Teknologi](#-teknologi)
+* [📄 Lisensi](#-lisensi)
 
-Absensi
+---
 
-Sistem kelas & semester
+## ✨ Overview
 
-Dashboard guru dan siswa
+Aplikasi e-learning untuk mendukung pembelajaran DKV di SMK Negeri 1 Kamal. Menyediakan fitur lengkap mulai dari materi, tugas, absensi, diskusi, hingga notifikasi.
 
-📦 Fitur Utama
+---
 
-CRUD Materi (video, gambar, file, ringkasan)
+## 🚀 Fitur Utama
 
-CRUD Tugas (deadlines, upload file, nilai)
+### 👨‍🏫 Untuk Guru
 
-Diskusi per-materi
+* Manajemen materi (video, gambar, file, ringkasan)
+* Manajemen tugas & penilaian
+* Manajemen referensi
+* Proyek siswa (gambar + link)
+* Rekap absensi
+* Diskusi per materi
+* Notifikasi komentar baru
+* Sistem kenaikan kelas
+* Dashboard analitik sederhana
 
-Notifikasi real-time sederhana
+### 🧑‍🎓 Untuk Siswa
 
-Proyek siswa (gambar + link)
+* Melihat materi berdasarkan guru, kelas, dan semester
+* Mengirim tugas
+* Melihat nilai
+* Mengikuti diskusi
+* Melihat referensi
+* Melihat proyek
+* Mendapatkan notifikasi
 
-Rekap absensi
+---
 
-Sistem kenaikan kelas
+## 🛠️ Instalasi di Lokal
 
-Sidebar dinamis berdasarkan guru–kelas–semester
+### 1️⃣ Clone Repository
 
-🚀 Cara Install di Lokal
-1️⃣ Clone Repository
+```
 git clone https://github.com/alfed-mubarok/e-learning.git
 cd e-learning
+```
 
-2️⃣ Install Dependencies
+### 2️⃣ Install Dependencies
+
+```
 composer install
+```
 
-3️⃣ Buat File .env dari Template
+### 3️⃣ Buat File .env
+
+```
 cp env.example .env
+```
 
-4️⃣ Konfigurasi .env
-Base URL Lokal:
+---
+
+## 🔧 Konfigurasi File ENV
+
+### Base URL Lokal
+
+```
 app.baseURL = 'http://localhost:8080'
+```
 
-Database Lokal:
+### Database Lokal
+
+```
 database.default.hostname = localhost
 database.default.database = e-learning
 database.default.username = root
 database.default.password =
 database.default.DBDriver = MySQLi
 database.default.port = 3306
+```
 
-Encryption Key:
+### Encryption Key
+
+```
 encryption.key = base64:f8hjK8JYt1h0kP9u7Q1zN3yS8Bt1v4c2n0Q5zA2s4Wk=
+```
 
-5️⃣ Import Database
+---
 
-Buka phpMyAdmin
+## 🗄️ Import Database
 
-Buat database dengan nama: e-learning
+1. Buka phpMyAdmin
+2. Buat database baru:
 
-Import file SQL schema
+```
+e-learning
+```
 
-6️⃣ Jalankan Server
+3. Import file SQL schema
+
+---
+
+## ▶️ Menjalankan Server Lokal
+
+```
 php spark serve
-
+```
 
 Akses:
 
+```
 http://localhost:8080
+```
 
-🔑 Akun Login Default
-Guru
+---
+
+## 🔑 Akun Login Default
+
+### 👨‍🏫 Guru
+
+```
 ID User  : G002
 Password : admin
+```
 
+---
 
-Guru dapat:
+## 🌐 Panduan Hosting
 
-Tambah siswa
+### 1️⃣ Clone ke server
 
-Tambah materi
-
-Tambah tugas
-
-Lihat rekap tugas
-
-Tambah referensi
-
-Kelola proyek siswa
-
-🌐 Panduan Hosting (Untuk Server / Kakak Tingkat)
-
-Clone repo ke server:
-
+```
 git clone https://github.com/alfed-mubarok/e-learning.git
+```
 
+### 2️⃣ Install dependencies
 
-Jalankan:
-
+```
 composer install
+```
 
+### 3️⃣ Copy env.example → .env
 
-Copy env.example menjadi .env
+Isi database hosting.
 
-Isi database hosting:
+### 4️⃣ Jadikan folder public sebagai web root
 
-database.default.hostname = SQL_HOST
-database.default.database = NAMA_DATABASE
-database.default.username = USER_DB
-database.default.password = PASSWORD_DB
+### 5️⃣ Set permission writable
 
-
-Generate encryption key jika perlu:
-
-php spark key:generate
-
-
-Pastikan folder public/ dijadikan webroot (public_html)
-
-Set permission folder writable:
-
+```
 chmod -R 775 writable/
+```
 
+### 6️⃣ Import database SQL
 
-Import database SQL
+---
 
-Jalankan website
+## 🧩 Teknologi
 
-Selesai 🎉
+* CodeIgniter 4
+* PHP 8+
+* MySQL
+* Bootstrap 5
+* jQuery
+* Composer
 
-📚 Teknologi
+---
 
-CodeIgniter 4
+## 📄 Lisensi
 
-PHP 8+
-
-MySQL
-
-Bootstrap 5
-
-jQuery
-
-📄 Lisensi
-
-Project ini digunakan untuk keperluan akademik SMK Negeri 1 Kamal.
-
-🧑‍💻 Pengembang
-
-Alfed Mubarok
+Untuk keperluan akademik SMK Negeri 1 Kamal.

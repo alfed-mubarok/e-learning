@@ -106,10 +106,7 @@ database.default.port = 3306
 
 ```
 Setelah membuat file .env, jalankan perintah berikut untuk menghasilkan encryption key:
-
 php spark key:generate
-
-encryption.key = (isi setelah generate)
 ```
 
 ---
@@ -171,6 +168,11 @@ composer install
 Isi database hosting.
 
 ### 4️⃣ Jadikan folder public sebagai web root
+
+```
+Jika menggunakan hosting cPanel, pindahkan isi folder /public ke folder /public_html/
+atau atur document-root agar mengarah ke /public.
+```
 
 ### 5️⃣ Set permission writable
 

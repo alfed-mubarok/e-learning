@@ -272,7 +272,9 @@
 
                             <div class="modal-footer">
                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                                <a class="btn btn-primary" href="<?= base_url('logout') ?>">Logout</a>
+                                <form action="<?= base_url('logout') ?>" method="post">
+                                    <button type="submit" class="btn btn-primary">Logout</button>
+                                </form>
                             </div>
 
                         </div>

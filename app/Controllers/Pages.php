@@ -7,7 +7,7 @@ class Pages extends BaseController
     public function index()
     {
         $data = ['title' => 'Log in'];
-        return view('Pages/login', $data);
+        return view('Pages/Login', $data);
     }
     public function register()
     {
